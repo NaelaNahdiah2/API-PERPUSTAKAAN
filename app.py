@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify
 from flask_restful import Api, Resource
 
-app = Flask(_name_)
+app = Flask(__name__)
 api = Api(app)
 
 # Contoh data buku untuk keperluan pengujian
@@ -67,5 +67,5 @@ class BookDetail(Resource):
 api.add_resource(BookList, '/books')
 api.add_resource(BookDetail, '/books/<int:book_id>')
 
-if _name_ == "_main_":
+if __name__ == "__main__":
     app.run(debug=True)
